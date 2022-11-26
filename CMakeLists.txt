@@ -156,7 +156,7 @@ target_include_directories(nfiq PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 add_library(nativelib SHARED native_lib.c)
 target_include_directories(nativelib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-
+target_compile_options(loop PUBLIC -fPIC)
 
 #TARGET LINK SECTION
 target_link_libraries(quality maps)

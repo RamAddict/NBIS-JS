@@ -1,34 +1,22 @@
-#include <jni.h>
+#include <stdio.h>
 #include <nfiq.h>
-/**
- * @author Ben Daniel.
- *
- * This is the JNI bridge that computes the NFIQ of a given image using the open source C library: https://github.com/lessandro/nbis
- */
+#include <emscripten/emscripten.h>
 
-
-unsigned char *as_unsigned_char_array(JNIEnv *env, jbyteArray array) {
-    int len = (*env)->GetArrayLength(env, array);
-    unsigned char *buf[len];
-    (*env)->GetByteArrayRegion(env, array, 0, len, (jbyte *) (buf));
-    return buf;
-}
-
-JNIEXPORT int JNICALL
-Java_com_seamfix_calculatenfiq_NFIQUtil_calculateNFIQ(
-        JNIEnv *env,
-        jobject callingObject,
-        jbyteArray data, jint imageWidth,
-        jint imageHeight) {
-
-
-    unsigned char *idata = as_unsigned_char_array(env, data);
+EMSCRIPTEN_KEEPALIVE int comp_nfiq() {
     int computedNfiq = -2;
     float oConfig = 1;
     int optFlag = 1;
+    printf("Hello!\n");
+    int ret = comp_nfiq(&computedNfiq, &oConfig, NULL, (int) 231, (int) 231, 8, -1, &optFlag);
+    printf("%d\n", computedNfiq);
+    printf("%d\n", oConfig);
+    return ret;
+}
 
-    comp_nfiq(&computedNfiq, &oConfig, idata, (int) imageWidth, (int) imageHeight, 8, -1, &optFlag);
 
-    return computedNfiq;
+int main() {
+    int status = comp_nfiq();
+    printf("Status code: %d\n ", status);
+    return 0;
 }
 
