@@ -11,4 +11,4 @@ Web assembly transpilation of the old NIST-NFIQ project.
     emmake make -j4
 
 ## Generate wasm and js
-emcc *.a -o output.html -s NO_EXIT_RUNTIME=1 -s "EXPORTED_RUNTIME_METHODS=['ccall']"
+    emcc *.a -o output.html -s NO_EXIT_RUNTIME=1 -s "EXPORTED_RUNTIME_METHODS=['ccall']"

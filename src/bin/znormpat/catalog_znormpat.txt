@@ -1,3 +1,0 @@
- znormpat - Takes A patterns file of (un-normalized) feature vectors,
-            and ZNormalizes its feature vectors based on global statistics
-            provided.

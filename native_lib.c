@@ -2,7 +2,7 @@
 #include <nfiq.h>
 #include <emscripten/emscripten.h>
 
-EMSCRIPTEN_KEEPALIVE int comp_nfiq() {
+EMSCRIPTEN_KEEPALIVE int computeNfiq() {
     int computedNfiq = -2;
     float oConfig = 1;
     int optFlag = 1;
@@ -15,7 +15,7 @@ EMSCRIPTEN_KEEPALIVE int comp_nfiq() {
 
 
 int main() {
-    int status = comp_nfiq();
+    int status = computeNfiq();
     printf("Status code: %d\n ", status);
     return 0;
 }
