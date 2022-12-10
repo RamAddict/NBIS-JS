@@ -18,142 +18,143 @@
 # remove it after build complete, so only the distribution place could be
 # used for application linking.
 
-cmake_minimum_required(VERSION 3.4.1)
+cmake_minimum_required(VERSION 3.13)
 
+project(nativelib)
 set(CMAKE_VERBOSE_MAKEFILE on)
 
 add_library(loop STATIC src/lib/nfiq/loop.c)
 target_include_directories(loop PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(znorm SHARED src/lib/nfiq/znorm.c)
+add_library(znorm STATIC src/lib/nfiq/znorm.c)
 target_include_directories(znorm PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(ridges SHARED src/lib/nfiq/ridges.c)
+add_library(ridges STATIC src/lib/nfiq/ridges.c)
 target_include_directories(ridges PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(ssxstats SHARED src/lib/nfiq/ssxstats.c)
+add_library(ssxstats STATIC src/lib/nfiq/ssxstats.c)
 target_include_directories(ssxstats PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(acs SHARED src/lib/nfiq/acs.c)
+add_library(acs STATIC src/lib/nfiq/acs.c)
 target_include_directories(acs PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(remove SHARED src/lib/nfiq/remove.c)
+add_library(remove STATIC src/lib/nfiq/remove.c)
 target_include_directories(remove PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(runmlp SHARED src/lib/nfiq/runmlp.c)
+add_library(runmlp STATIC src/lib/nfiq/runmlp.c)
 target_include_directories(runmlp PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(memalloc SHARED src/lib/nfiq/memalloc.c)
+add_library(memalloc STATIC src/lib/nfiq/memalloc.c)
 target_include_directories(memalloc PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(syserr SHARED src/lib/nfiq/syserr.c)
+add_library(syserr STATIC src/lib/nfiq/syserr.c)
 target_include_directories(syserr PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(chaincod SHARED src/lib/nfiq/chaincod.c)
+add_library(chaincod STATIC src/lib/nfiq/chaincod.c)
 target_include_directories(chaincod PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(shape SHARED src/lib/nfiq/shape.c)
+add_library(shape STATIC src/lib/nfiq/shape.c)
 target_include_directories(shape PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(link SHARED src/lib/nfiq/link.c)
+add_library(link STATIC src/lib/nfiq/link.c)
 target_include_directories(link PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(matchpat SHARED src/lib/nfiq/matchpat.c)
+add_library(matchpat STATIC src/lib/nfiq/matchpat.c)
 target_include_directories(matchpat PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(binar SHARED src/lib/nfiq/binar.c)
+add_library(binar STATIC src/lib/nfiq/binar.c)
 target_include_directories(binar PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(morph SHARED src/lib/nfiq/morph.c)
+add_library(morph STATIC src/lib/nfiq/morph.c)
 target_include_directories(morph PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(sort SHARED src/lib/nfiq/sort.c)
+add_library(sort STATIC src/lib/nfiq/sort.c)
 target_include_directories(sort PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(dft SHARED src/lib/nfiq/dft.c)
+add_library(dft STATIC src/lib/nfiq/dft.c)
 target_include_directories(dft PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(globals SHARED src/lib/nfiq/globals.c)
+add_library(globals STATIC src/lib/nfiq/globals.c)
 target_include_directories(globals PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(util SHARED src/lib/nfiq/util.c)
+add_library(util STATIC src/lib/nfiq/util.c)
 target_include_directories(util PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(fatalerr SHARED src/lib/nfiq/fatalerr.c)
+add_library(fatalerr STATIC src/lib/nfiq/fatalerr.c)
 target_include_directories(fatalerr PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(contour SHARED src/lib/nfiq/contour.c)
+add_library(contour STATIC src/lib/nfiq/contour.c)
 target_include_directories(contour PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(line SHARED src/lib/nfiq/line.c)
+add_library(line STATIC src/lib/nfiq/line.c)
 target_include_directories(line PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(imgutil SHARED src/lib/nfiq/imgutil.c)
+add_library(imgutil STATIC src/lib/nfiq/imgutil.c)
 target_include_directories(imgutil PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(free SHARED src/lib/nfiq/free.c)
+add_library(free STATIC src/lib/nfiq/free.c)
 target_include_directories(free PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(init SHARED src/lib/nfiq/init.c)
+add_library(init STATIC src/lib/nfiq/init.c)
 target_include_directories(init PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(block SHARED src/lib/nfiq/block.c)
+add_library(block STATIC src/lib/nfiq/block.c)
 target_include_directories(block PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(mlpcla SHARED src/lib/nfiq/mlpcla.c)
+add_library(mlpcla STATIC src/lib/nfiq/mlpcla.c)
 target_include_directories(mlpcla PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(maps SHARED src/lib/nfiq/maps.c)
+add_library(maps STATIC src/lib/nfiq/maps.c)
 target_include_directories(maps PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(log SHARED src/lib/nfiq/log.c)
+add_library(log STATIC src/lib/nfiq/log.c)
 target_include_directories(log PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(quality SHARED src/lib/nfiq/quality.c)
+add_library(quality STATIC src/lib/nfiq/quality.c)
 target_include_directories(quality PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(detect SHARED src/lib/nfiq/detect.c)
+add_library(detect STATIC src/lib/nfiq/detect.c)
 target_include_directories(detect PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(sgemv SHARED src/lib/nfiq/sgemv.c)
+add_library(sgemv STATIC src/lib/nfiq/sgemv.c)
 target_include_directories(sgemv PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(getmin SHARED src/lib/nfiq/getmin.c)
+add_library(getmin STATIC src/lib/nfiq/getmin.c)
 target_include_directories(getmin PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
 
 add_library(minutia STATIC src/lib/nfiq/minutia.c)
 target_include_directories(minutia PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(xytreps SHARED src/lib/nfiq/xytreps.c)
+add_library(xytreps STATIC src/lib/nfiq/xytreps.c)
 target_include_directories(xytreps PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(sscal SHARED src/lib/nfiq/sscal.c)
+add_library(sscal STATIC src/lib/nfiq/sscal.c)
 target_include_directories(sscal PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(saxpy SHARED src/lib/nfiq/saxpy.c)
+add_library(saxpy STATIC src/lib/nfiq/saxpy.c)
 target_include_directories(saxpy PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(snrm2 SHARED src/lib/nfiq/snrm2.c)
+add_library(snrm2 STATIC src/lib/nfiq/snrm2.c)
 target_include_directories(snrm2 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(sdot SHARED src/lib/nfiq/sdot.c)
+add_library(sdot STATIC src/lib/nfiq/sdot.c)
 target_include_directories(sdot PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(lsame SHARED src/lib/nfiq/lsame.c)
+add_library(lsame STATIC src/lib/nfiq/lsame.c)
 target_include_directories(lsame PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
 
-add_library(xerbla SHARED src/lib/nfiq/xerbla.c)
+add_library(xerbla STATIC src/lib/nfiq/xerbla.c)
 target_include_directories(xerbla PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(nfiqgbls SHARED src/lib/nfiq/nfiqgbls.c)
+add_library(nfiqgbls STATIC src/lib/nfiq/nfiqgbls.c)
 target_include_directories(nfiqgbls PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(nfiq SHARED src/lib/nfiq/nfiq.c)
+add_library(nfiq STATIC src/lib/nfiq/nfiq.c)
 target_include_directories(nfiq PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(nativelib SHARED native_lib.c)
+add_library(nativelib STATIC native_lib.c)
 target_include_directories(nativelib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
 target_compile_options(loop PUBLIC -fPIC)
