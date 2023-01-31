@@ -7,5 +7,6 @@ CMakeFiles/
 *.html
 *.js
 *.wasm
+*.mjs
 build
 html/*.wsq
