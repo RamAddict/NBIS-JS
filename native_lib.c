@@ -153,6 +153,12 @@ int checkDuplicateFinger(char *inputImg1, int bufferLength1, char *inputImg2, in
    {
       exit(ret);
    }
+   free(direction_map);
+   free(low_contrast_map);
+   free(low_flow_map);
+   free(high_curve_map);
+   free(quality_map);
+
    free(decodedOutput1);
    debugf("Got minutiae1!\n");
 
@@ -180,6 +186,11 @@ int checkDuplicateFinger(char *inputImg1, int bufferLength1, char *inputImg2, in
    {
       exit(ret);
    }
+   free(direction_map);
+   free(low_contrast_map);
+   free(low_flow_map);
+   free(high_curve_map);
+   free(quality_map);
    free(decodedOutput2);
    debugf("Got minutiae2!\n");
 
