@@ -5,8 +5,10 @@ cmake_install.cmake
 Makefile
 CMakeFiles/
 *.html
+!examples/index.html
 *.js
 *.wasm
 *.mjs
 build
 html/*.wsq
+node_modules

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="nbis-js.js" type="module"></script>
+    <script type="module">
+        import {checkDuplicateFingerFromBase64, getNfiqScoreFromBase64} from "./nbis-js.js";
+        const a = await fetch("LEFT_HAND_PINKY_BASE64.txt");
+        const b = await fetch("LEFT_HAND_RING_BASE64.txt");
+        const leftHandPinky = await a.text();
+        const leftHandRing = await b.text();
+        // you may check all of these results with the NBIS binaries
+        console.log(await checkDuplicateFingerFromBase64(leftHandPinky, leftHandRing)) // should be false
+        console.log(await checkDuplicateFingerFromBase64(leftHandRing, leftHandRing)) // should be true
+        console.log(await getNfiqScoreFromBase64(leftHandPinky)) // should be 3
+        console.log(await getNfiqScoreFromBase64(leftHandRing))  // should be 1
+    </script>
+  </head>
+  <body style="font-weight: bold; font-size: xx-large;">
+    Check the console!
+  </body>
+</html>

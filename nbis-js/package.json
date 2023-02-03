@@ -1,0 +1,16 @@
+{
+  "name": "nbis-js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "copy-to-examples": "cp dist/nbis-js.js ../examples/",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "5.0.0-beta",
+    "vite": "^4.1.0"
+  }
+}

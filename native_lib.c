@@ -102,9 +102,9 @@ int computeNfiq(char *inputImg, int bufferLength, const char *fileType, int *oup
 }
 
 // files should be wsq for now
-int checkDuplicateFinger(char *inputImg1, int bufferLength1, char *inputImg2, int bufferLength2)
+int checkDuplicateFinger(char *inputImg1, int bufferLength1, char *inputImg2, int bufferLength2, int *ouputNfiq)
 {
-   printf("checkDuplicateFinger!\n");
+   debugf("checkDuplicateFinger!\n");
    // first of all we have to decode the images
    unsigned char *decodedOutput1, *decodedOutput2;
    int ret, optflag;
@@ -233,15 +233,16 @@ int checkDuplicateFinger(char *inputImg1, int bufferLength1, char *inputImg2, in
    // clean up
    if ((remove(finger1OutputFile)) == 0)
    {
-      printf("file1 removed! \n");
+      debugf("file1 removed! \n");
    }
    if ((remove(finger2OutputFile)) == 0)
    {
-      printf("file2 removed! \n");
+      debugf("file2 removed! \n");
    }
    free(pstruct);
    free(gstruct);
-   return n;
+   *ouputNfiq = n;
+   return ret; 
 }
 
 void debugf(const char *str, ...)
