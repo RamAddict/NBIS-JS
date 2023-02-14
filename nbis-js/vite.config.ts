@@ -7,7 +7,7 @@ export default defineConfig({
         assetsInlineLimit: 4096,
         minify: "esbuild",
         lib: {
-            entry: "./src/nbis.ts",
+            entry: "./src/nbis-js.ts",
             name: "nbis",
             formats: ["es"],
         },
@@ -23,7 +23,7 @@ export default defineConfig({
     },
     plugins: [
         dts({
-            include: ["./src/nbis.ts"],
+            include: ["./src/nbis-js.ts"],
             compilerOptions: {
                 emitDeclarationOnly: true,
                 declaration: true,
