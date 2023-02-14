@@ -1,7 +1,19 @@
 // @ts-ignore
 import loadWasm from "../../build/output.mjs";
 
-let emscriptenModule: EmscriptenWasm.Module;
+interface NbisModule extends EmscriptenModule {
+    ccall: typeof ccall;
+    getValue: typeof getValue;
+};
+
+let emscriptenModule: NbisModule;
+
+/**
+ * Matching threshold used by Bozorth in finger duplication checking.
+ * To increase likeliness of match, decrease this number.
+ * To decrease matching results, increase this number.
+ * @default 40
+ */
 export let BOZORTH_MATCH_THRESHOLD = 40;
 
 // Write this on your cjs file to be able to use this lib in node
@@ -27,8 +39,8 @@ export async function checkDuplicateFingerFromBase64(
     finger2: string
 ): Promise<boolean> {
     // convert to from base64 to char*
-    const data1 = Uint16Array.from(atob(finger1), (c) => c.charCodeAt(0));
-    const data2 = Uint16Array.from(atob(finger2), (c) => c.charCodeAt(0));
+    const data1 = Uint8Array.from(atob(finger1), (c) => c.charCodeAt(0));
+    const data2 = Uint8Array.from(atob(finger2), (c) => c.charCodeAt(0));
     const module = await getWasmModule();
     let matchScorePointer = module._malloc(4);
 
@@ -65,7 +77,7 @@ export async function getNfiqScoreFromBase64(
 ): Promise<number> {
     // convert to from base64 to char*
     const module = await getWasmModule();
-    const data = Uint16Array.from(atob(finger), (c) => c.charCodeAt(0));
+    const data = Uint8Array.from(atob(finger), (c) => c.charCodeAt(0));
 
     const nfiqPointer = module._malloc(4);
     const response = module.ccall(
