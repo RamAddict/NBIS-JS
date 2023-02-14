@@ -1,9 +1,10 @@
 // @ts-ignore
 import loadWasm from "../../build/output.mjs";
 
-let emscriptenModule: EmscriptenWasm.Module = await loadWasm();
+let emscriptenModule: EmscriptenWasm.Module;
 export let BOZORTH_MATCH_THRESHOLD = 40;
 
+// Write this on your cjs file to be able to use this lib in node
 // import { fileURLToPath } from "url";
 // import { dirname } from "path";
 // globalThis.__dirname = dirname(fileURLToPath(import.meta.url));
