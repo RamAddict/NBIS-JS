@@ -1,20 +1,45 @@
 {
-  "name": "nbis-js",
-  "private": false,
-  "version": "0.0.0",
-  "type": "module",
-  "typings": "dist/src/nbis.d.ts",
-  "main": "dist/nbis-js.js",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "copy-to-examples": "cp dist/nbis-js.js ../examples/",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "@types/emscripten": "^1.39.6",
-    "typescript": "5.0.0-beta",
-    "vite-plugin-dts": "^1.7.3",
-    "vite": "^4.1.0"
-  }
+    "name": "nbis-js",
+    "private": false,
+    "version": "0.1.0",
+    "description": "Nbis (NIST Biometric Image Software) compiled to web assembly!",
+    "main": "dist/nbis-js.js",
+    "type": "module",
+    "types": "dist/nbis-js/src/nbis-js.d.ts",
+    "author": {
+        "email": "arthur@salvumterra.com",
+        "name": "Arthur Philippi Bianco",
+        "url": "https://github.com/ramaddict"
+    },
+    
+    "license": "AGPL-3.0-or-later",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RamAddict/NBIS-JS.git"
+    },
+    "keywords": [
+        "wasm",
+        "nbis",
+        "fbi",
+        "nist",
+        "biometric",
+        "webassembly",
+        "fingerprint",
+        "nfiq",
+        "bozorth",
+        "web",
+        "js"
+    ],
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "copy-to-examples": "cp dist/nbis-js.js ../examples/",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "@types/emscripten": "^1.39.6",
+        "typescript": "5.0.0-beta",
+        "vite-plugin-dts": "^1.7.3",
+        "vite": "^4.1.0"
+    }
 }
