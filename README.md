@@ -4,6 +4,8 @@ Web assembly transpilation of some functions from the old NIST-NBIS project. Cur
 
 ## **Usage**
 
+You may install with [npm](https://www.npmjs.com/package/nbis-js) or use the [CDN](https://unpkg.com/nbis-js@0.1.0/dist/nbis-js.js)
+
 ```js
 import {
     checkDuplicateFingerFromBase64,
