@@ -1,6 +1,7 @@
 # **NBIS-JS**
 Finger NFIQ validation and matching directly in the browser.
-Web assembly transpilation of some functions from the old NIST-NBIS project. Currently the functions we implemented are finger Matching, with Mindtct and Bozorth, and NFIQ 1.0 score.
+
+Currently the functions we implemented are finger Matching, with Mindtct and Bozorth, and NFIQ 1.0 score.
 
 ## **Usage**
 
